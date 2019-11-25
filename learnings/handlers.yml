@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+  become: yes
+  vars:
+    httpd_log_level: error
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: latest
+    - name: update configuration
+      tempalte:
+        src: /home/ansible/httpd.conf.j2
+        dest: /etc/httpd/conf/httpd.conf
+      notify: httpd service
+  handlers:
+    - name: httpd service
+      service:
+        name: httpd
+        state: restarted
+      listen: httpd service
+

@@ -1,0 +1,8 @@
+
+/etc/ansible/hosts need to be configured properly to maintain server related information on where the job needs to run.
+solution:
+[servers] - value to be present
+
+/etc/ansible/group_vars/servers to have ansible global variables.
+ansible_ssh_user
+ansible_ssh_password

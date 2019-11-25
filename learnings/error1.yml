@@ -1,0 +1,15 @@
+---
+
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: install dummy software
+      yum:
+        name: broke
+        state: latest
+      ignore_errors: yes
+    - name: execute command
+      command: changed.sh
+      register: cmd_out
+      changed_when: "'CHANGED' in cmd_out.stdout" 
+      failed_when: "'FAILED' in cmd_out.stdout"

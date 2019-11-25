@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: install software
+      yum:
+        name: elinks
+        state: latest
+    - name: install more software
+      yum:
+        name: nmap-ncat
+        state: latest
+
+  

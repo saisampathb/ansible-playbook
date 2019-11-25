@@ -1,2 +1,3 @@
 # ansible-advanced
-Ansible Playbook code to deploy various services
+This project includes code related to ansible-playbooks and some services that I have created and deployed using ansible.
+

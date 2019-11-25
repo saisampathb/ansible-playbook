@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  vars_files:
+    valut_vars.yml
+  tasks:
+    - name: add secrete text
+      lineinfile:
+        create: yes
+        line: "{{ password }}"
+      no_log: true

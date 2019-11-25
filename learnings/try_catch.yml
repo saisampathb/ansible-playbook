@@ -1,0 +1,14 @@
+---
+
+- hosts: localhost
+  become: yes
+  tasks:
+  block:
+    - name: install
+      yum:
+        name: samadfa
+        state: latest
+  rescue:
+    command: echo "hello issue here"
+     
+        

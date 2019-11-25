@@ -1,0 +1,9 @@
+---
+- hosts: remote
+  become: yes
+  tasks:
+  - name: create  afile
+    lineinfile:
+      path: /home/ansible/hostname
+      create: yes
+      line: "{{ ansible_hostname }}"

@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: no
+  vars:
+    target_file: /home/ansible/sam
+  tasks:
+   - name: gather file information
+     stat:
+       path: "{{ target_file }}"
+     register: hostname
+   - name: rename hostname when found
+     command: mv "{{ target_file }}" /home/ansible/net-info
+     when: hostname.stat.exists 
+

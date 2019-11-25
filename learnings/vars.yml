@@ -1,0 +1,11 @@
+working_dir: /home/cloud_user/ansible/working
+services_list:
+- httpd
+- nfs
+- mariadb
+
+share_paths:
+  nfs: /mnt/nfs
+  cifs: /mnt/cifs
+  iscsi: /mnt/iscsi
+  
